@@ -6,15 +6,9 @@ import NProgress from 'nprogress';
 
 import Nav from './Nav';
 
-Router.onRouteChangeStart = () => {
-  NProgress.start();
-};
-Router.onRouteChangeComplete = () => {
-  NProgress.done();
-};
-Router.onRouteChangeError = () => {
-  NProgress.done();
-};
+Router.onRouteChangeStart = () => NProgress.start();
+Router.onRouteChangeComplete = () => NProgress.done();
+Router.onRouteChangeError = () => NProgress.done();
 
 const Logo = styled.h1`
   font-size: 4rem;
@@ -37,7 +31,7 @@ const Logo = styled.h1`
 
 const StyledHeader = styled.header`
   .bar {
-    border-bottom: 10px solid ${({ theme }) => theme.black};
+    border-bottom: 1rem solid ${({ theme }) => theme.black};
     display: grid;
     grid-template-columns: auto 1fr;
     justify-content: space-between;
