@@ -9,5 +9,5 @@
 
 ## Links
 
-[GitHub Repo](https://github.com/wesbos/Advanced-React)
-[Tutorial Home Page](https://advancedreact.com/)
+- [GitHub Repo](https://github.com/wesbos/Advanced-React)
+- [Tutorial Home Page](https://advancedreact.com/)
