@@ -49,7 +49,6 @@ const StyledPage = styled.div`
 
 const Inner = styled.div`
   max-width: ${({ theme }) => theme.maxWidth};
-  background: ${({ theme }) => theme.red};
   margin: 0 auto;
   padding: 2rem;
 `;
