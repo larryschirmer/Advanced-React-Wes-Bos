@@ -5,7 +5,9 @@ import Router from 'next/router';
 
 import Form from './styles/Form';
 import ErrorMessage from '../components/ErrorMessage';
+
 import { cloudinaryURL } from '../config';
+import stringToNumber from '../lib/stringToNumber'
 import formatMoney from '../lib/formatMoney';
 
 export const CREATE_ITEM_MUTATION = gql`
@@ -40,7 +42,7 @@ export default class CreateItem extends Component {
   };
 
   handleChange = ({ target: { name, type, value } }) => {
-    const val = type === 'number' ? parseFloat(value) : value;
+    const val = type === 'number' ? stringToNumber(value) : value;
     this.setState({ [name]: val });
   };
 
