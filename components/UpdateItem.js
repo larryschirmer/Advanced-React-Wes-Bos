@@ -43,9 +43,14 @@ export default class UpdateItem extends Component {
     const { id } = this.props;
     const { item } = this.state;
 
-    e.preventDeault();
+    e.preventDefault();
     const res = await updateItem({
       variables: { ...item, id },
+    });
+
+    Router.push({
+      pathname: '/item',
+      query: { id },
     });
   };
 
@@ -56,7 +61,7 @@ export default class UpdateItem extends Component {
       <Query query={SINGLE_ITEM_QUERY} variables={{ id }}>
         {({ data, loading }) => {
           if (loading) return <p>Loading... (:</p>;
-          if (!data.item)
+          if (!(data && data.item))
             return (
               <p>
                 No Item Found for id:
